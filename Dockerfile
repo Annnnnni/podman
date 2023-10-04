@@ -4,7 +4,7 @@ FROM gradle:6.7.1-jdk11-hotspot AS builder
 WORKDIR /app
 
 COPY build.gradle settings.gradle /app/
-COPY gradle /app/gradle
+COPY demo/src /app/src
 COPY src /app/src
 
 RUN gradle clean build -x test
